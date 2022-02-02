@@ -5,6 +5,10 @@ const router = Router();
 
 router.get('/', operationsController.get);
 
+router.get('/expenses', operationsController.getExpenses);
+
+router.get('/income', operationsController.getIncome);
+
 router.post('/', operationsController.create);
 
 router.patch('/:id', operationsController.patch);

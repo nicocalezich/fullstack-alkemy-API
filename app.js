@@ -9,10 +9,12 @@ app.use(cors({
     origin: '*'
 }));
 
-const reposRoute = require('./routes/operations');
+const operationsRouter = require('./routes/operations');
+const usersRouter = require('./routes/users');
 
 app.use(express.json());
-app.use('/operations', reposRoute);
+app.use('/operations', operationsRouter);
+app.use('/users', usersRouter)
 
 
 // start the Express server

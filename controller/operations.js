@@ -21,6 +21,24 @@ const operationsController = {
         }
     },
 
+    getExpenses: async (_req, res) => {
+        try {
+            const operations = await operationsService.getExpenses()
+            res.send(operations).status(200)
+        } catch (error) {
+            res.send(error)
+        }
+    },
+
+    getIncome: async (_req, res) => {
+        try {
+            const operations = await operationsService.getIncome()
+            res.send(operations).status(200)
+        } catch (error) {
+            res.send(error)
+        }
+    },
+
     patch: async (req, res) => {
         try {
             const id = req.params.id
